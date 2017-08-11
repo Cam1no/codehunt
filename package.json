@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Cam1no/codehunt/issues"
   },
-  "homepage": "https://github.com/Cam1no/codehunt#readme"
+  "homepage": "https://github.com/Cam1no/codehunt#readme",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
 }
