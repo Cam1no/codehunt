@@ -9,24 +9,24 @@ class HomePage extends React.Component {
           id: 1,
           name: 'google',
           link: 'http://google.com',
-          media: '/img/google.png',
+          media: '/img/hoge.gif',
           upvote: 169,
           description: 'google web site',
           maker: {
             name: 'yuji',
-            avater: '/img/umi.jpg'
+            avater: '/img/hoge.gif'
           }
         },
         {
           id: 2,
           name: 'yahoo',
           link: 'http://yahoo.co.jp',
-          media: '/img/yahoo.jpg',
+          media: '/img/hoge.gif',
           upvote: 161,
           description: 'yahoo web site',
           maker: {
             name: 'yuji2',
-            avater: '/img/yahoo.jpg'
+            avater: '/img/hoge.gif'
           }
         }
       ]
@@ -60,9 +60,6 @@ class HomePage extends React.Component {
                   <p>
                     {this.state.productList[0].description}
                   </p>
-                  <a href="#">
-                    <img className="small-avater" src={this.state.productList[0].maker.avater} />
-                  </a>
                 </section>
                 <a className="prodct-item-link" href={this.state.productList[0].link}>
                   <span>
@@ -86,9 +83,6 @@ class HomePage extends React.Component {
                   <p>
                     {this.state.productList[1].description}
                   </p>
-                  <a href="#">
-                    <img className="small-avater" src={this.state.productList[1].maker.avater} />
-                  </a>
                 </section>
                 <a className="prodct-item-link" href={this.state.productList[1].link}>
                   <span>

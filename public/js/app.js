@@ -21002,23 +21002,23 @@ var HomePage = function (_React$Component) {
         id: 1,
         name: 'google',
         link: 'http://google.com',
-        media: '/img/google.png',
+        media: '/img/hoge.gif',
         upvote: 169,
         description: 'google web site',
         maker: {
           name: 'yuji',
-          avater: '/img/umi.jpg'
+          avater: '/img/hoge.gif'
         }
       }, {
         id: 2,
         name: 'yahoo',
         link: 'http://yahoo.co.jp',
-        media: '/img/yahoo.jpg',
+        media: '/img/hoge.gif',
         upvote: 161,
         description: 'yahoo web site',
         maker: {
           name: 'yuji2',
-          avater: '/img/yahoo.jpg'
+          avater: '/img/hoge.gif'
         }
       }]
     };
@@ -21076,11 +21076,6 @@ var HomePage = function (_React$Component) {
                     'p',
                     null,
                     this.state.productList[0].description
-                  ),
-                  _react2.default.createElement(
-                    'a',
-                    { href: '#' },
-                    _react2.default.createElement('img', { className: 'small-avater', src: this.state.productList[0].maker.avater })
                   )
                 ),
                 _react2.default.createElement(
@@ -21124,11 +21119,6 @@ var HomePage = function (_React$Component) {
                     'p',
                     null,
                     this.state.productList[1].description
-                  ),
-                  _react2.default.createElement(
-                    'a',
-                    { href: '#' },
-                    _react2.default.createElement('img', { className: 'small-avater', src: this.state.productList[1].maker.avater })
                   )
                 ),
                 _react2.default.createElement(
