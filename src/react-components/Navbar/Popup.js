@@ -9,6 +9,7 @@ class Popup extends React.Component{
         </section>
         <section className="popup-content">
           <section>
+            {this.props.children}
           </section>
         </section>
       </section>
