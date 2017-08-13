@@ -11,6 +11,14 @@ body {
   margin: 0 auto;
 }
 
+
+a {
+  font-size: 13px;
+  color: #444444;
+  text-decoration: none;
+}
+
+
 /*------------------------------ PRODUCT LIST -----------------------------*/
 
 .product-list {
