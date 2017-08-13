@@ -335,6 +335,8 @@ button:hover {
 
 .product-popup .product-popup-body main .discussion .post-comment img {
   margin-right: 15px;
+  border-radius: 100%;
+  width: 50px;
 }
 
 .product-popup .product-popup-body main .discussion .post-comment input {

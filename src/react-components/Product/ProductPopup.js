@@ -36,6 +36,28 @@ class ProductPopup extends React.Component {
     );
   }
 
+  renderBodyDiscussion(){
+    return(
+      <section className="discussion">
+        <h2>Discussion</h2>
+        <section className="post-comment">
+          <img className="medium-avatr" src="/img/profile.jpg"/>
+          <input placeholder="to be discuss" />
+        </section>
+      </section>
+    );
+  }
+
+  renderBody(){
+    return(
+      <section className="product-popup-body">
+        <main>
+          {this.renderBodyDiscussion()}
+        </main>
+      </section>
+    );
+  }
+
   renderUpVoteButton(){
     return(
       <a className="upvote-button" href='#'>
@@ -51,6 +73,7 @@ class ProductPopup extends React.Component {
     return(
       <Popup {...this.props} style="product-popup">
         {this.renderHeader()}
+        {this.renderBody()}
       </Popup>
     );
   }
