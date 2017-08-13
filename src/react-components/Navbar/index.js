@@ -1,6 +1,8 @@
 import React from 'react';
+import Popup from './Popup';
 
 class Navbar extends React.Component{
+
   renderProductSearch(){
     return(
       <section className="left-side">
@@ -31,6 +33,7 @@ class Navbar extends React.Component{
           {this.renderLogo()}
           {this.renderUser()}
         </section>
+        <Popup />
       </section>
     );
   }
