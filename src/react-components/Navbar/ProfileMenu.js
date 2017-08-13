@@ -22,10 +22,12 @@ class ProfileMenu extends React.Component{
     }
   };
 
+  // コンポーネントがMountされるときに呼びだされるReactのメソッド
   componentWillMount(){
     window.addEventListener('click', this.handleClickOutSite, false)
   }
 
+  // コンポーネントがUnMountされるときに呼びだされるReactのメソッド
   componentWillUnMount(){
     window.removeEventListener('click', this.handleClickOutSite, false)
   }

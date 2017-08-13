@@ -21385,9 +21385,15 @@ var ProfileMenu = function (_React$Component) {
 
   _createClass(ProfileMenu, [{
     key: 'componentWillMount',
+
+
+    // コンポーネントがMountされるときに呼びだされるReactのメソッド
     value: function componentWillMount() {
       window.addEventListener('click', this.handleClickOutSite, false);
     }
+
+    // コンポーネントがUnMountされるときに呼びだされるReactのメソッド
+
   }, {
     key: 'componentWillUnMount',
     value: function componentWillUnMount() {
