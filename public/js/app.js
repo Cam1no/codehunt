@@ -21335,7 +21335,7 @@ var PostPopup = function (_React$Component) {
 exports.default = PostPopup;
 
 },{"./Popup":185,"react":182}],187:[function(require,module,exports){
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -21343,7 +21343,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -21371,6 +21371,12 @@ var ProfileMenu = function (_React$Component) {
       }
     };
 
+    _this.handleClickOutSite = function (e) {
+      if (e.target != _this.refs.profileBtn) {
+        _this.setState({ showProfileNav: false });
+      }
+    };
+
     _this.state = {
       showProfileNav: false
     };
@@ -21378,30 +21384,40 @@ var ProfileMenu = function (_React$Component) {
   }
 
   _createClass(ProfileMenu, [{
-    key: "renderProfileNav",
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      window.addEventListener('click', this.handleClickOutSite, false);
+    }
+  }, {
+    key: 'componentWillUnMount',
+    value: function componentWillUnMount() {
+      window.removeEventListener('click', this.handleClickOutSite, false);
+    }
+  }, {
+    key: 'renderProfileNav',
     value: function renderProfileNav() {
       return _react2.default.createElement(
-        "nav",
-        { className: "profile-nav", ref: "ProfileNav" },
+        'nav',
+        { className: 'profile-nav', ref: 'ProfileNav' },
         _react2.default.createElement(
-          "a",
-          { href: "#" },
-          "My Profile"
+          'a',
+          { href: '#' },
+          'My Profile'
         ),
         _react2.default.createElement(
-          "a",
-          { href: "#" },
-          "Logout"
+          'a',
+          { href: '#' },
+          'Logout'
         )
       );
     }
   }, {
-    key: "render",
+    key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        "section",
-        { className: "profile-menu" },
-        _react2.default.createElement("img", { src: "/img/profile.jpg", onClick: this.handleClick, className: "profile-btn medium-avatar" }),
+        'section',
+        { className: 'profile-menu' },
+        _react2.default.createElement('img', { src: '/img/profile.jpg', onClick: this.handleClick, className: 'profile-btn medium-avatar', ref: 'profileBtn' }),
         this.state.showProfileNav ? this.renderProfileNav() : null
       );
     }

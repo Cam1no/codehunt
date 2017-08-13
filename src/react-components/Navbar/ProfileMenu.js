@@ -16,6 +16,20 @@ class ProfileMenu extends React.Component{
     }
   };
 
+  handleClickOutSite = (e) => {
+    if (e.target != this.refs.profileBtn){
+      this.setState({showProfileNav: false})
+    }
+  };
+
+  componentWillMount(){
+    window.addEventListener('click', this.handleClickOutSite, false)
+  }
+
+  componentWillUnMount(){
+    window.removeEventListener('click', this.handleClickOutSite, false)
+  }
+
   renderProfileNav(){
     return(
       <nav className="profile-nav" ref="ProfileNav">
@@ -27,7 +41,7 @@ class ProfileMenu extends React.Component{
   render(){
     return(
       <section className="profile-menu">
-        <img src="/img/profile.jpg" onClick={this.handleClick} className="profile-btn medium-avatar"/>
+        <img src="/img/profile.jpg" onClick={this.handleClick} className="profile-btn medium-avatar" ref="profileBtn"/>
         {
           this.state.showProfileNav? this.renderProfileNav() : null
 
