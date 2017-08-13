@@ -21166,7 +21166,7 @@ var Popup = function (_React$Component) {
         ),
         _react2.default.createElement(
           "section",
-          { className: "popup-content" },
+          { className: "popup-content login-popup" },
           _react2.default.createElement(
             "section",
             null,

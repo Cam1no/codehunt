@@ -47,7 +47,7 @@ class Navbar extends React.Component{
           {this.renderLogo()}
           {this.renderUser()}
         </section>
-        <LoginPopup status={this.state.popupStatus} hidePopup={this.hidePopup}/>
+        <LoginPopup status={this.state.popupStatus} hidePopup={this.hidePopup} />
       </section>
     );
   }
