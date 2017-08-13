@@ -17,7 +17,24 @@ class ProductPopup extends React.Component {
           name: 'yuji',
           avater: '/img/hoge.gif'
         }
-      }
+      },
+      comments: [
+        {
+          name: "yuji",
+          avatar: "/img/profile.jpg",
+          content: 'Hello World'
+        },
+        {
+          name: "yuji",
+          avatar: "/img/profile.jpg",
+          content: 'Hello New World'
+        },
+        {
+          name: "yuji",
+          avatar: "/img/profile.jpg",
+          content: 'Hello Good World'
+        }
+      ]
     }
   }
 
@@ -44,6 +61,7 @@ class ProductPopup extends React.Component {
           <img className="medium-avatr" src="/img/profile.jpg"/>
           <input placeholder="to be discuss" />
         </section>
+        {this.renderComments()}
       </section>
     );
   }
@@ -55,6 +73,26 @@ class ProductPopup extends React.Component {
           {this.renderBodyDiscussion()}
         </main>
       </section>
+    );
+  }
+
+  renderComments(){
+    return(
+      <ul className="comment-list">
+        {
+          this.state.comments.map(function(comment, idx){
+            return (
+              <li className={idx}>
+                <img className="medium-avatar" src={comment.avatar} />
+                <section>
+                  <strong>{comment.name}</strong>
+                  <p>{comment.content}</p>
+                </section>
+              </li>
+            )
+          })
+        }
+      </ul>
     );
   }
 

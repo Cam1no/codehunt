@@ -348,6 +348,7 @@ button:hover {
 
 .comment-list li {
   padding: 20px 0;
+  list-style: none;
 }
 
 .comment-list li>* {
