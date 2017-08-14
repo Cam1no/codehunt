@@ -46496,6 +46496,10 @@ var _Popup = require('./Popup');
 
 var _Popup2 = _interopRequireDefault(_Popup);
 
+var _Firebase = require('../Firebase');
+
+var _Firebase2 = _interopRequireDefault(_Firebase);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -46508,9 +46512,28 @@ var LoginPopup = function (_React$Component) {
   _inherits(LoginPopup, _React$Component);
 
   function LoginPopup() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
     _classCallCheck(this, LoginPopup);
 
-    return _possibleConstructorReturn(this, (LoginPopup.__proto__ || Object.getPrototypeOf(LoginPopup)).apply(this, arguments));
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = LoginPopup.__proto__ || Object.getPrototypeOf(LoginPopup)).call.apply(_ref, [this].concat(args))), _this), _this.handleLogin = function () {
+      var provider = new _Firebase2.default.auth.FacebookAuthProvider();
+      _Firebase2.default.auth().signInWithPopup(provider).then(function (result) {
+        var token = result.credential.accessToken;
+        var user = result.user;
+      }).catch(function (error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        var email = error.email;
+        var credential = error.credential;
+      });
+    }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(LoginPopup, [{
@@ -46532,7 +46555,7 @@ var LoginPopup = function (_React$Component) {
         ),
         _react2.default.createElement(
           'button',
-          { className: 'facebook-btn' },
+          { className: 'facebook-btn', onClick: this.handleLogin },
           'Login with facebook'
         )
       );
@@ -46544,7 +46567,7 @@ var LoginPopup = function (_React$Component) {
 
 exports.default = LoginPopup;
 
-},{"./Popup":336,"react":331}],336:[function(require,module,exports){
+},{"../Firebase":333,"./Popup":336,"react":331}],336:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -47390,7 +47413,7 @@ var App = function (_React$Component) {
       return _react2.default.createElement(
         'section',
         null,
-        _react2.default.createElement(_Navbar2.default, { user: true }),
+        _react2.default.createElement(_Navbar2.default, { user: false }),
         _react2.default.createElement(_HomePage2.default, null)
       );
     }
