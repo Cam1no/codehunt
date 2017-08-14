@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "react-practice-deb8e"
+  },
+  "hosting": {
+    "public": "build"
+  }
+}

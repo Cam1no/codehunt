@@ -1,37 +1,23 @@
 import React from 'react';
 import ProductList from '../Product/ProductList';
+import firebase from '../Firebase'
 
 class HomePage extends React.Component {
   constructor(){
     super();
     this.state = {
-      productList: [
-        {
-          id: 1,
-          name: 'google',
-          link: 'http://google.com',
-          media: '/img/hoge.gif',
-          upvote: 169,
-          description: 'google web site',
-          maker: {
-            name: 'yuji',
-            avater: '/img/hoge.gif'
-          }
-        },
-        {
-          id: 2,
-          name: 'yahoo',
-          link: 'http://yahoo.co.jp',
-          media: '/img/hoge.gif',
-          upvote: 161,
-          description: 'yahoo web site',
-          maker: {
-            name: 'yuji2',
-            avater: '/img/hoge.gif'
-          }
-        }
-      ]
+      productList: []
     }
+
+    var firebaseRef = firebase.database().ref('products');
+
+    firebaseRef.on('value', (snapshot) => {
+      var products = snapshot.val();
+
+      this.setState({
+        productList: products
+      })
+    })
   }
 
   render(){
